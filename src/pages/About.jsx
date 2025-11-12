@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const About = () => {
   const skills = [
     'React', 'JavaScript','Figma', 'TypeScript', 'Tailwind CSS', 'Node.js',
-    'Git', 'Responsive Design', 'REST APIs', 'Vite', 'Framer Motion',
+    'Git', 'Responsive Design', 'Vite', 'Framer Motion',
   ]
 
   const containerVariants = {
