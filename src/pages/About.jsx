@@ -54,7 +54,7 @@ const About = () => {
 >
   <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-xl overflow-hidden">
     <img 
-      src="/src/assets/profile-photo.jpg" 
+      src="profile-photo.jpg" 
       alt="Muhammad Rayyis Arif Faisal"
       className="w-full h-full object-cover"
     />
