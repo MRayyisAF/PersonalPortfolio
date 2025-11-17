@@ -82,7 +82,7 @@ const Home = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <motion.a
-            href="/public/cv/M Rayyis Arif Faisal-Resume.pdf" // Change this to your actual resume file path
+            href="https://drive.google.com/file/d/1INvGrmrvjoo6FXenkjuzSjS1BEsI1xpG/view?usp=sharing" 
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ 
