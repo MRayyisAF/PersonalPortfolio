@@ -1,62 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform built with React and Node.js, featuring user authentication, product catalog, and secure payment integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
+      title: "Burung Loncat",
+      description: "A recreation of the iconic game Flappy Bird.",
+      technologies: ["React", "Tailwind",],
+      github: "https://github.com/MRayyisAF/FlappyBird",
+      demo: "https://burungloncat.mrayyisaf.my.id/",
+      image: "burung loncat.png"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "Firebase", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
+      title: "Block Blast",
+      description: "A demake version of the popular mobile game Block Blast.",
+      technologies: ["JavaScript", "Tailwind", "React"],
+      github: "https://github.com/MRayyisAF/Blockblast",
+      demo: "https://blockblast.mrayyisaf.my.id/",
+      image: "blockblast.png"
     },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard that displays current conditions and forecasts with beautiful data visualizations.",
-      technologies: ["JavaScript", "Chart.js", "REST API", "CSS3"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
-    },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      description: "A modern portfolio website showcasing projects and skills with smooth animations and responsive design.",
-      technologies: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
-    },
-    {
-      id: 5,
-      title: "Social Media App",
-      description: "A full-stack social media application with real-time messaging, post sharing, and user profiles.",
-      technologies: ["React", "Express", "Socket.io", "PostgreSQL"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
-    },
-    {
-      id: 6,
-      title: "Fitness Tracker",
-      description: "A comprehensive fitness tracking application with workout plans, progress tracking, and nutrition logging.",
-      technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      image: "/api/placeholder/400/250"
-    }
   ]
 
   const containerVariants = {
@@ -95,7 +60,7 @@ const Projects = () => {
               My Projects
             </h1>
             <p className="text-xl text-dark/80 max-w-2xl mx-auto">
-              Here are some of the projects I've worked on.
+              Here are some of the projects I've created.
             </p>
             <div className="w-24 h-1 bg-primary mx-auto mt-6"></div>
           </motion.div>
@@ -113,8 +78,14 @@ const Projects = () => {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
               >
                 {/* Project Image */}
-                <div className="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">Project</span>
+                <div className="h-48 w-full overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.4 }}
+                  />
                 </div>
 
                 {/* Project Content */}
@@ -162,6 +133,33 @@ const Projects = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Contact Me Button Section */}
+          <motion.div
+            variants={itemVariants}
+            className="text-center mt-16"
+          >
+            <div className="bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4">
+                Interested in collaborating?
+              </h2>
+              <p className="text-dark/70 mb-6 max-w-md mx-auto">
+                Have a project in mind or want to collaborate? Let's discuss how we can bring your ideas to life.
+              </p>
+              <Link to="/contact">
+                <motion.button
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 10px 25px -5px rgba(82, 109, 130, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-primary/90"
+                >
+                  Contact Me
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>
